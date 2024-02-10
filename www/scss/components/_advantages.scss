@@ -1,0 +1,36 @@
+/* переваги */
+
+.advantages-section {
+	padding: 16px 0;
+
+	@media screen and (min-width:$bp-tablet) {
+		background-color: var(--color-main);
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		background-color: var(--color-chefs);
+		border-radius: 24px;
+		padding: 24px 40px;
+
+		@media screen and (min-width:$bp-tablet) {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 40px;
+			background-color: transparent;
+			padding: 0;
+		}
+	}
+
+	&__item {
+		font-size: 20px;
+		font-weight: 300;
+
+		@media screen and (min-width:$bp-tablet) {
+			font-size: 20px;
+			color: var(--color-background);
+		}
+	}
+}

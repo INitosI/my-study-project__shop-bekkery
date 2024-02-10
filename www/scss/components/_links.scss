@@ -1,0 +1,11 @@
+.link {
+	color: var(--color-background);
+	cursor: pointer;
+	text-decoration: none;
+	transition: color .3s;
+	line-height: 2.4;
+}
+
+.link:hover {
+	color: var(--color-main);
+}
