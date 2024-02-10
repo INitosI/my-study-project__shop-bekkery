@@ -1,0 +1,44 @@
+HTML
+
+
+<div class="checkbox">
+	<input type="checkbox" id="input-box" name="input-box" class="input-box">
+	<label class="label-box" for="input-box">Я точно погоджуюсь</label>
+</div>
+
+
+
+CSS
+
+
+
+/* checkbox */
+
+.input-box:checked+.label-box::before {
+	background-color: #819B57;
+}
+
+.input-box {
+	appearance: none;
+}
+
+.label-box {
+	padding-left: 12px;
+}
+
+.label-box::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 4px;
+	width: 16px;
+	height: 16px;
+	border-radius: 3px;
+	border: 1px solid #31261A;
+	content: '';
+}
+
+.checkbox {
+	position: relative;
+	margin: 0 auto;
+}

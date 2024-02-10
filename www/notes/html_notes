@@ -1,0 +1,193 @@
+<!-- основы -->
+
+<!DOCTYPE html>
+<!--this is my study project, here i will leave my notes here on my language-->
+<html>
+
+<head><!--страница состоит из блоков<html> обобщающий тег,<head> наследуется от первого, нужен для настройки страницы,
+		<body> наследуется от первого тега, в нём происходить всё создание страницы -->
+	<title>main tab</title> <!--этот тег позволяет оставлять подсказки при наводке на текст мышкой или название вкладки-->
+	<meta charset="utf-8">
+	<!--Мета - это тег, который позволяет делать настройки страницы, включая ключевые слова, заметки тд -->
+	<meta name="author" content="Danylo Kadurin">
+</head>
+
+<body>
+	<!-- comment -->
+
+	<p>paragraph</p><!--параграф-->
+	<p><b>tolstiy</b></p><!--б делает текст толстым, <strong>так-же используется</strong>-->
+	<h1>zagolovok<h1><!--есть 6 размеров заголовка-->
+			<h6>zagolovok</h6>
+			<p>text<i>ile</i></p><!--курсив, так же используется <dm></dm>-->
+			<input type="password"><!--есть несколько типов ввода: пароль и текст-->
+			<button>
+				<h3>buy</h3>
+			</button> <!--кнопка-->
+			<img src="../images/plan.png"><!--img scr=путь картинки-->
+			<p>guide<br><big>for</big><small title="ME">me</small></p><!--<br>- Enter <hr> - делает линию по горизонтали 
+			<big/small>- большой/маленький текст-->
+			<p>testtea
+				<hr>teaeteat
+			</p>
+			<abbr title="NITOS">NTS</abbr><!--Отделение аббревиатуры-->
+			<pre>function open(){
+dir=23
+}</pre><!--выводит всё вместе с отступами и переносами-->
+			<code>y=23</code><!--отделяет код-->
+			<address>UKRAINE,DNYPRO</address><!--Отделяет адрес-->
+			<sub>2</sub> <!--Верхний регистр-->
+			<sup>2</sup> <!--Нижний регистр -->
+</body>
+
+<!-- списки -->
+
+<body>
+	<ol>
+		<!--list пронумерованый список, можно начать его при помощи атрибута start = "x", type = "i" - позволяет выбрать тип номеров-->
+		<li> <!--list item --> Сделай денег</li>
+		<li> <!--list item --> Сделай сайт</li>
+		<li> <!--list item --> Сделай компанию</li>
+	</ol>
+	<ul> <!--He пронумерованый список-->
+		<li> <!--list item --> Сделай денег</li>
+		<li> <!--list item --> Сделай сайт</li>
+		<li> <!--list item --> Сделай компанию</li>
+	</ul>
+</body>
+
+<!-- ссылки  -->
+
+<body>
+	<button><a title="s.html" href="s.html" target="_self"><b>next</b></a>
+</body></button>
+<a href="#down">Down</a>
+
+<a id="down"></a>
+<a href="mailto:danylo.kadurin@nure.ua">mail</a>
+</body>
+
+<!-- изображения -->
+
+
+<body>
+	<img src="https://www.wbcsd.org/var/site/storage/images/overview/news-insights/wbcsd-insights/accelerating-business-along-the-road-to-a-nature-positive-
+	future/225091-1-eng-GB/Accelerating-business-along-the-road-to-a-nature-positive-future_i1140.jpg" width="500"
+		height="auto" title="Press" alt="it`s not bag, it`s advantage">
+</body>
+<svg> - для фону
+
+
+	<!-- таблицы -->
+
+	<body>
+		<table border="1" width="500px">
+			<caption>заголовок</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Second Name</th>
+				</tr>
+			</thead>
+
+			<tbody align="center">
+				<tr>
+					<td>Danil</td>
+					<td>Kadurin</td><!--rowspan повзволяет расширить поле одной ячейки на большее кол-во рядков -->
+				</tr>
+				<tr>
+					<td>Daria</td>
+					<td>Bila</td>
+				</tr>
+			</tbody>
+			<tr>dotom</tr>
+			<tr>second</tr>
+			<tfoot>
+
+			</tfoot>
+		</table>
+	</body>
+
+	<!-- Подключения файлов js and css in head -->
+
+	<link rel="stylesheet" href="test.css">
+	<script src="script.js" defer></script>
+
+	<!-- div - span -->
+
+	<div>создаёт блок для scc <span>а спан возвращает чатсичку текста</span></div>
+
+	<!-- очень важная и большая тема: ФОРМЫ -->
+
+	<body>
+		<form action="" method="post"> <!-- не совсем понял значения этих атрибутов, но они обязательны для работы с отправкой данных
+	это будет в php теме -->
+			<label for="user_name">Введите имя</label> <!-- lable часто используют для подписей к формочкам -->
+			<input type="text" name="user_name" placeholder="You`re name" id="user_name"> <!-- placeholder для подскизки внутри поля для ввода
+			!!!Так-же есть value="которое сразу вводит текст для редактирования"!!! maxlength="нужен для ограничения кол-ва символов"
+			hidden прячет поле, disable - поле видно, но оно не доступно для ввода, readonly только для чтения,
+			type= text, password, email, url, color, date, time, checkbox(галочка), radio(круглая галочка) если я даю выбор между двумя
+			 предложениями, на пример ваш пол, то я должен просто дать двум галочкам одно name, file, search, button, submit(для отправки на сервер),
+			 reset(чистит всё внутри тега form) -->
+
+		</form>
+	</body>
+
+	<!-- Поле для ввода текста. Тег для создания кнопки -->
+
+	<form action="">
+		<textarea name="Text_name" id="Text_name">Можно сделать заранее введенный текст</textarea>
+		<button>кнопка</button>
+	</form>
+
+	<!-- Селекторы выбора список с выбором чего-либо -->
+
+	<form action="">
+		<select multiple size="8"> <!-- multiple для нескольких выборов -->
+			<option value="" disabled selected>----</option>
+			<option value="">BMW</option>
+			<option value="">AUDI</option>
+			<option value="">MERCEDES</option> <!--selected сразу вибирает этот вариант-->
+			<option value="" disabled>----</option>
+		</select>
+	</form>
+
+	<!-- Специальные HTML5 теги -->
+
+	<header>шапка</header> - для описания блока шапки сайта вместо <div id="header">шапка</div>
+	<main>основная часть сайта<section>каждая секциясайта должна быть названа</section>
+	</main> - для описания блока
+	основы сайта вместо <div..></div..>
+	<aside>боковая часть сайта</aside>
+	<footer>нижняя секция сайта</footer>
+	<nav>navigation on the site</nav>
+	<article>нужен для независимого распространения блока или динамического изменения</article>
+
+
+	<progress max="100" value="35"></progress> - загрузка чего-либо
+
+	<details>
+		<summary>подробнее</summary>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+	</details> - стрелочка "подробнее"
+
+	<!-- iframe -->
+	<iframe src="ссылка" frameborder="1">Нужно чтобы вставлять фрагмент другого сайта на свой</iframe>
+
+	<!-- Медиа -->
+
+	<audio controls> <!-- !ВСЕ! атрибуты можно посмотреть на сайте mdn Видео -->
+		<source src="path">
+	</audio>
+
+	<video controls>
+		<source src="path.webm" type="video/webm"> <!-- меньше весит -->
+		<source src="path.mp4" type="video/mp4"> <!-- альтернатива -->
+	</video>
+
+	<div>div - section</div>
+
+	Спрайт иконки
+
+	<svg>
+		<use></use>
+	</svg>

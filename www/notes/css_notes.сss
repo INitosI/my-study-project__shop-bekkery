@@ -1,0 +1,244 @@
+/* Основы */
+h1{ /* селектор, саме тут на прикладі заголовку тобто селектору ТЕГУ, також є селектори класу,
+Ідентифікатора, атрибуту, нащадка, дитини */
+color:sample; /* колір тексту */
+background-color:sample; /* колір фону */
+border: 4px solid black; /* ширина бортиків, тип(тут слитний) та колір */
+}
+/* селектор КЛАССУ у "HTML
+<aтрибут class="name" />" це використовуеться частіше для css */
+.name{
+/* код */
+}
+/* по айді краще використовувати для js*/
+#name{
+/* code */
+}
+/* по атрибуту, його можна комбінувати із классом, наприклад .button[disable] - якщо кнопка вимкнена */
+[atribute]{
+/* code */
+}
+
+/* наслідування HTML <selection class="name">
+	<h1></h1>
+	якщо не поставити > то буде окутано весь код у selection */
+	.name > h1{
+	/* code */
+	}
+
+	ul {
+	list-style-type: none; /* прибирає крапочки поруч із елементами */
+	}
+
+	/* Псевдокласи стану є такі як:
+	hover при наведенні на об'єкт, його фон затемнюється,
+	focus потрібен для виділення наведення за допомогою TAB or SHIFT+TAB або для виділення, коли ти натискаєш на строку
+	вводу,
+	active застосовується у момент кліку
+	.name:hover{}*/
+	/* sample */
+	.button {
+	color: #FAF4EA;
+	border-radius: 8px;
+	border: 2px solid var(--color-main);
+	background-color: var(--color-main);
+	cursor: pointer;
+	}
+
+	.button:hover {
+	color: #465929;
+	border-radius: 8px;
+	border: 2px solid var(--color-main);
+	background-color: transparent;
+	}
+
+	/* змінні */
+
+	:root{
+	--name:red;
+	}
+
+	/* Шрифти та текст */
+	/* задається за font-family є такі як serif, sant-setrif, monospace*/
+	font-family:'name', sans-serif;
+	font-size: Xpx; /* розмір тексту */
+	font-weight: weight;
+	font-style: normal/italic;
+	line-height: 1.5; /* = line-height(from figma)/font-weight */
+	/* найпопулярніші css-властивості для тексту */
+	text-decoration: /* underline / none - підкреслює текст*/;
+	text-align: /* center/left/rigt... задає положення тексту*/;
+	text-transform : /* uppercase ставить текст у верній регістр та інші трансформації */;
+	text-shadow: /* Xpx Ypx Zpx color робить тінь*/
+	letter-spacing: /* Xpx робить відстань між літерами */;
+	word-spacing: /* Відстань між словами */;
+	white-space: /* nowrap не переносить текст на новий рядок */;
+
+
+	/* блоки */
+
+	content - головний контент
+	padding - внутрішньє поле
+	border - рамка
+	margin - зовнішній відступ
+
+	widght - ширина
+	height - висота
+
+	для центрування блоку:
+	margin:0 auto;
+
+	box-sizing:content-box; обчислює розмір елемента. корегує розмір блоку (якщо написав 100 на 100, то буде 100 на 100)
+	краще це робити так:
+	*{
+	box-sizing: content-box;
+	} це дозволить примінити це до всіх блоків сторінки
+
+	/* типи елементів Розташування*/
+
+	задаються через display
+
+	display:type; - type = inline( лінейні ), block ( блокові ), inline-block
+
+	/* структурні псевдокласи */
+
+	Основні типи:
+	first-child
+	last-child
+	not()
+	nth-child(odd - кожний не парний елемент/even - кожний парний. 2n+4 кожний 4-й елемент)
+	/* приклад */
+	.element:nth-child(4) {
+	color: blueviolet;
+	background-color: aqua;
+	} /* розкрашує кожен четвертий блок у синій */
+
+	/* flexbox - гнучке керування блоками. Розташування блоків*/
+
+	flex контейнер - це батько змінюванної группи елементів
+
+	Властивості:
+	display
+	flex-direction: column; - змінює напрямок об'єктів, за замовчуванням row - вздовж лінії, також можна увімкнути
+	..-reverse
+	justify-content:; - flex-start стоїть за замовчувнням. Це допомогає розташовувати об'єкти у продовж лінії флексу,
+	space-between,
+	center, flex-end використовуються частіше за все
+	align-items:; вирівнює всі елементи різних розмірів (знизу, у центрі або зверху - так за замовчуванням )
+	flex-wrap:wrap-reverse; дозволяє перекидати елементи на новий рядочок, якщо ті не вміщуються у лінію.
+	align-content: center; вирівнює об'єкти по горизонту, якщо розмір блоку більший або константа.
+	flex-basis: 100px; - добре для флекс елементу
+	/* width: 100px; */ - погано для флексу
+	flex-grow - дозволяє розтянути той чи інший об'єкт на вільний простір лінії
+	/* приклад */
+	.Flex_item:nth-child(1) {
+	flex-grow: 1; займає вільний простір
+	}
+	.Flex_item:nth-child(2) {
+	flex-grow: 2; у два рази більший за 1-й
+	}
+	.Flex_item:nth-child(3) {
+	flex-grow: 3; у три рази більший за 1-й
+	} /*++I++++I++++++*/
+	flex-shrink - дозволяє зтянути той чи інший об'єкт якщо немає простору, тобто при значені "0" ці об'єкти не будуть
+	стискатися
+
+	align-self - це align-items тільки для одного обє'кта
+	order - дозволяє змінювати порядок об'єктів. Змінювання порядку об'єктів
+
+	Дві властивості flex-direction та flex-wrap найчастіше використовуються разом,
+	тому існує скорочена властивість flex-flow,
+	що обʼєднує їх. Ця властивість приймає одне значення кожної з властивостей,
+	які відокремлені пробілом. Наприклад,
+	ви можете застосувати flex-flow: row wrap для встановлення рядків та перенесення їх.
+	gap: Xpx; - робить зазор між об'єктами (у переліку точно).
+
+	/* фон */
+
+	background-{x}
+	x = {color - колір, image-зображення :url, repeat, position, size : contain cover зберігає співвідношення,
+	attachment: fixed зафіксувати фон}
+
+	Властивості фону використовуються для додавання фонових ефектів для
+елементів:
+➔ background-color
+➔ background-image
+➔ background-repeat
+➔ background-position
+➔ background-size
+➔ background-attachment: fixed - для фіксації фону
+
+	/* градієнт фону */
+
+	background-image:radial/linear-gradient(напрямок to left/right/top/bottom/45deg(45 градусів), from color 30%,next
+	color 70% (optimal), to color 100% )
+	відсотки не накладаюстся, вони схлопуются.
+
+	також є жосткий градієнт (red 30%, blue 30%, blue 50%, green 50%, green 100%)
+
+	/* тінь */
+
+	box-shadow: x y blur розпилення(спрей) колір;
+	box-shadow: 13px 20px 50px 15px #000;
+
+	/* псевдоелементи */
+
+	::before{
+	content: '';
+	}
+	::after
+
+	Декоративні зображення - <svg>
+
+	позиціонування
+
+	position:static relative absolute fixed
+
+	/* трансформації */
+
+	transform:translate(); - зміщення
+	transform:rotate(); - обертання
+	transform:scale(); - розмір
+	transform:slew(); - викривлення
+
+	/* переходи */
+
+	transition-property; що ми анімуємо
+	transition-duration; час анімації Ys
+	transition-timing-function; щось з вищої математики, блимання
+	transition-delay; затримка як на ардуіно
+
+	/* CSS-анімація */
+
+	animation-name;
+	animation-duration;
+	animation-timing-function;
+	animation-delay;
+	animation-iteration-count;
+
+	@keyframes spin {
+	0% {
+		transform: rotate(0);
+	}
+
+	30% {
+		transform: rotate(-45deg)
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+	animation: name time iteration-count timing-function;
+
+	/* форми */
+	<form name autocomplete novalidate></form>
+	<input type="text, email, password, tel, radio/checkbox
+	range,datetime-local">
+
+	/* валідація */
+
+	Обов'язкове поле задається атрибутом required
+
+	
